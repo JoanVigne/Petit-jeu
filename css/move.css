@@ -1,0 +1,13 @@
+
+
+
+
+.bulle {
+    background-color: white;
+    width: 70px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1;
+    font-weight: bold;
+}
