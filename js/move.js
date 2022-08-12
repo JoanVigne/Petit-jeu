@@ -1,6 +1,5 @@
 
 
-
 // touches directionnelles
 document.onkeydown = checkKey;
 function checkKey(e) {
@@ -26,12 +25,12 @@ function checkKey(e) {
         else if (positionRow == 6) {
             player.style.gridRowStart = Number(positionRow) + 1;
             bulle("TOUCH DOWN");
-            touchDowm();
+            setTimeout(function(){touchDowm(); }, 1300);;
         }
     }
     else if (e.keyCode == '37') {
         if (positionColumn > 1) {
-            player.style.gridColumnStart = Number(positionColumn) - 1;;
+            player.style.gridColumnStart = Number(positionColumn) - 1;
             console.log("touched");
         }
         else {
