@@ -1,5 +1,9 @@
 function touchDowm(){
+    // let player = document.getElementById("player");
+    player.style.gridRowStart = 1;
+    player.style.gridColumnStart = 1;
     let level = document.title;
+    playerLevelUp();
     switch(level){
         case "index" : console.log("Menu principal");
         break;
@@ -7,16 +11,22 @@ function touchDowm(){
         document.title = "Level 2";
         break;
         case "Level 2" : console.log("Level One");
+        document.title = "Level 3";
         break;
         case "Level 3" : console.log("Level One");
+        document.title = "Level 4";
         break;
         case "Level 4" : console.log("Level One");
+        document.title = "Level 5";
         break;
         case "Level 5" : console.log("Level One");
+        document.title = "Level 6";
         break;
         case "Level 6" : console.log("Level One");
+        document.title = "Level 7";
         break;
         case "Level 7" : console.log("Level One");
+        document.title = "Level 8";
         break;
         case "Level 8" : console.log("Level One");
         break;

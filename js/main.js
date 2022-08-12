@@ -44,12 +44,9 @@ function buttonsMenuEvent(){
 }
 
 
+
+
 // START GAME
-function playerCreation(){
-    let player = document.createElement("div");
-    player.setAttribute("id", "player");
-    container.append(player);
-}
 function startGame(){
     // ENLEVER LES BUTTONS
     let buttonStart = document.getElementById("start");
@@ -74,9 +71,9 @@ function creationDesCases(){
     }
 };
 
+// creation du player player.js
+// FAIRE BOUGER LE PLAYER  move.js
 
-// FAIRE BOUGER LE PLAYER 
-// move.js
 
 
 // pour les vies du perso, changer la taille : background-size: auto, contain, cover;
