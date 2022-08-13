@@ -1,0 +1,15 @@
+
+.enemies{
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position: center;
+    width: 100%;
+}
+#velo1{
+    background-image: url("../images/icons8-hockey-helmet-48.png");
+    grid-column: 4;
+    grid-row: 3;
+}
+.velo2{
+    background-image: url("../images/icons8-hockey-helmet-50.png");
+}

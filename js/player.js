@@ -6,9 +6,35 @@ function playerCreation(){
     player.setAttribute("id", "player");
     container.append(player);
 }
+
 function playerLevelUp(){
-    // pour les vies du perso, changer la taille : background-size: auto, contain, cover;
+    const playerStyle = window.getComputedStyle(player, null);
+    let playerSize = playerStyle.getPropertyValue("background-size");
+    if(playerSize == "auto"){
+        player.style.backgroundSize = "contain";
+        bulle("+1 vie")
+    }
+    else if(playerSize == "contain"){
+        player.style.backgroundSize = "cover";
+        bulle("+1 vie")
+    } 
+    else {
+        bulle("tro costo la");
+    }
 }
 function playerDestruction(){
-
+    const playerStyle = window.getComputedStyle(player, null);
+    let playerSize = playerStyle.getPropertyValue("background-size");
+    if(playerSize == "cover"){
+        player.style.backgroundSize = "contain";
+        bulle("ouch")
+    }
+    else if(playerSize == "contain"){
+        player.style.backgroundSize = "auto";
+        bulle("last chance")
+    } 
+    else {
+        buttonsMenu(),buttonsMenuEvent();
+    }
 }
+

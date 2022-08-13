@@ -32,7 +32,6 @@ function buttonsMenuEvent(){
     buttonOptions.addEventListener("click", options);
     buttonPersonalRecord.addEventListener("click", personalRecord);
     function start(){
-        console.log("clicked");
         startGame();
     }
     function options(){
@@ -76,4 +75,3 @@ function creationDesCases(){
 
 
 
-// pour les vies du perso, changer la taille : background-size: auto, contain, cover;

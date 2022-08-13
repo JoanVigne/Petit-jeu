@@ -11,7 +11,6 @@ function checkKey(e) {
     if (e.keyCode == '38') {
         if (positionRow > 1) {
             player.style.gridRowStart = Number(positionRow) - 1;
-            console.log("touched");
         }
         else {
             bulle("Trop haut");
@@ -19,19 +18,23 @@ function checkKey(e) {
     }
     else if (e.keyCode == '40') {
         if (positionRow < 6) {
+            // fonctionne mais pas propre
+            // let velo1 = document.getElementById("velo1");
+            // const velo1Style = window.getComputedStyle(velo1, null);
+            // let positionColumnVelo1 = velo1Style.getPropertyValue("grid-column-start");
+            // velo1.style.gridColumnStart = Number(positionColumnVelo1) - 1;
             player.style.gridRowStart = Number(positionRow) + 1;
-            console.log("vers le bas");
+            // console.log("vers le bas");
         }
         else if (positionRow == 6) {
             player.style.gridRowStart = Number(positionRow) + 1;
             bulle("TOUCH DOWN");
-            setTimeout(function(){touchDowm(); }, 1300);;
+            setTimeout(function(){touchDowm(); }, 1100);;
         }
     }
     else if (e.keyCode == '37') {
         if (positionColumn > 1) {
             player.style.gridColumnStart = Number(positionColumn) - 1;
-            console.log("touched");
         }
         else {
             bulle("Trop a gauche");
@@ -40,7 +43,6 @@ function checkKey(e) {
     else if (e.keyCode == '39') {
         if (positionColumn < 4) {
             player.style.gridColumnStart = Number(positionColumn) + 1;
-            console.log("touched");
         }
         else {
             bulle("trop à droite !");
@@ -49,12 +51,11 @@ function checkKey(e) {
 }
 
 function bulle(message) {
-    console.log(message);
     let bulle = document.createElement("p");
     bulle.classList.add("bulle");
     bulle.innerHTML = message;
     player.append(bulle);
-    setTimeout(function(){ effacerBulle(); }, 1300);
+    setTimeout(function(){ effacerBulle(); }, 1100);
     function effacerBulle(){
         let toutesLesBulles = document.getElementsByClassName("bulle");
             toutesLesBulles[0].parentNode.removeChild(bulle);
