@@ -43,8 +43,6 @@ function buttonsMenuEvent(){
 }
 
 
-
-
 // START GAME
 function startGame(){
     // ENLEVER LES BUTTONS
@@ -54,24 +52,15 @@ function startGame(){
     buttonStart.remove();
     buttonOptions.remove();
     buttonPersonalRecord.remove();
+    // 
     document.title = "First Level";
     container.classList.replace("menu", "grid");
     playerCreation();
-    creationDesCases()
 }
 
- // boucle pour creer toutes les cases
-function creationDesCases(){
-    for (let i = 0; i <= 26; i++){
-        let div = document.createElement("div");
-        div.classList.add("div"+i);
-        div.classList.add("cases");
-        container.append(div);
-    }
-};
 
-// creation du player player.js
-// FAIRE BOUGER LE PLAYER  move.js
+// creation du player  dans  ======> player.js
+// FAIRE BOUGER LE PLAYER dans  ===> move.js
 
 
 

@@ -9,9 +9,11 @@ function touchDowm(){
         break;
         case "First Level" : 
         document.title = "Level 2";
+        enemiesCreation("velo1");
         break;
         case "Level 2" : 
         document.title = "Level 3";
+        enemiesCreation("viking1");
         break;
         case "Level 3" : 
         document.title = "Level 4";
@@ -42,39 +44,4 @@ function touchDowm(){
         break;
     }
 }
-
-
-// function newLevel(){
-//     let level = document.title;
-//     switch(level){
-//         case "index" : console.log("Menu principal");
-//         break;
-//         case "First Level" : console.log("Level One");
-//         break;
-//         case "First 2" : console.log("Level One");
-//         break;
-//         case "First 3" : console.log("Level One");
-//         break;
-//         case "First 4" : console.log("Level One");
-//         break;
-//         case "First 5" : console.log("Level One");
-//         break;
-//         case "First 6" : console.log("Level One");
-//         break;
-//         case "First 7" : console.log("Level One");
-//         break;
-//         case "First 8" : console.log("Level One");
-//         break;
-//         case "First 9" : console.log("Level One");
-//         break;
-//         case "First 10" : console.log("Level One");
-//         break;
-//         case "First 11" : console.log("Level One");
-//         break;
-//         case "First 12" : console.log("Level One");
-//         break;
-//         case "First 13" : console.log("Level One");
-//         break;
-//     }
-// }
 

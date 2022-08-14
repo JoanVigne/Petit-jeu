@@ -27,14 +27,27 @@ function playerDestruction(){
     let playerSize = playerStyle.getPropertyValue("background-size");
     if(playerSize == "cover"){
         player.style.backgroundSize = "contain";
-        bulle("ouch")
+        bulle("Meh")
     }
     else if(playerSize == "contain"){
         player.style.backgroundSize = "auto";
         bulle("last chance")
     } 
     else {
-        buttonsMenu(),buttonsMenuEvent();
+        bulle("ouch");
+        setTimeout(function () { alert("You OUT"); }, 400);
+        setTimeout(function () { location.reload(); }, 500);
+}
+}
+// BULLES MESSAGES
+function bulle(message) {
+    let bulle = document.createElement("p");
+    bulle.classList.add("bulle");
+    bulle.innerHTML = message;
+    player.append(bulle);
+    setTimeout(function () { effacerBulle(); }, 1100);
+    function effacerBulle() {
+        let toutesLesBulles = document.getElementsByClassName("bulle");
+        toutesLesBulles[0].parentNode.removeChild(bulle);
     }
 }
-

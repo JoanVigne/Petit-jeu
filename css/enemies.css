@@ -7,9 +7,14 @@
 }
 #velo1{
     background-image: url("../images/icons8-hockey-helmet-48.png");
-    grid-column: 4;
-    grid-row: 3;
+    grid-column-start: 4;
+    grid-row-start: 3;
 }
-.velo2{
+#velo2{
     background-image: url("../images/icons8-hockey-helmet-50.png");
+}
+#viking1{
+    background-image: url("../images/icons8-casque-viking-64.png");
+    grid-column-start: 1;
+    grid-row-start: 7;
 }
