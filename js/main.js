@@ -2,10 +2,8 @@
 // LE CONTAINER DU JEU
 let container = document.getElementById("container");
 
-
 // PAGES 
 window.onload = buttonsMenu(),buttonsMenuEvent();
-
 
 // LA FUNCTION POUR CREER DES BUTTONS
 function buttons(id, value){
@@ -22,8 +20,8 @@ function buttonsMenu(){
     buttons("options", "Options");
     buttons("personalRecord", "Personnal Records");
     container.classList.add("menu");
-    
 }
+
 function buttonsMenuEvent(){
     let buttonStart = document.getElementById("start");
     let buttonOptions = document.getElementById("options");
@@ -41,7 +39,6 @@ function buttonsMenuEvent(){
         console.log("personnalRecord");
     }
 }
-
 
 // START GAME
 function startGame(){
@@ -61,6 +58,7 @@ function startGame(){
 
 // creation du player  dans  ======> player.js
 // FAIRE BOUGER LE PLAYER dans  ===> move.js
+// FAIRE BOUGER LES ENEMIES DANS ==> enemies.js
 
 
 

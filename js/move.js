@@ -24,13 +24,27 @@ function checkKey(e) {
         if (positionRow < 6) {
             // player move
             player.style.gridRowStart = Number(positionRow) + 1;
-            // move de VELO1 qui ne fait qu'aller vers la gauche, il bouge quand player va vers le bas
+            // enemie moves
             if (document.title == "Level 2") {
-                moveVelo1();
+                moveLeft("velo1", 1);
             }
-            // move de VIKING1 qui ne fait qu'aller vers le haut, il bouge quand player va vers le bas
             if (document.title == "Level 3") {
-                moveViking1();
+                moveUp("viking1", 1);
+            }
+            // move velo 2, haut + gauche quand player va vers le bas
+            if (document.title == "Level 4") {
+                moveUp("velo2", 1);
+                moveLeft("velo2", 1);
+            }
+            if (document.title == "Level 5"){
+                moveUp("foot1", 1);
+                moveLeft("foot1", 1);
+                moveUp("foot2", 1);
+                moveRight("foot2", 1);
+            }
+            // ESSAI LEVEL 1 
+            if (document.title == "First Level"){
+                console.log("premier level pour faire des essaies");
             }
         }
         else if (positionRow == 6) {
@@ -58,86 +72,9 @@ function checkKey(e) {
             bulle("trop à droite !");
         }
     }
-    verifierSiColision(); // fonctionne mais erreur sur velo1.getcomputedstyle
+    verifierSiColisionEssai("Level 2", "velo1");
+    verifierSiColisionEssai("Level 3", "viking1");
+    verifierSiColisionEssai("Level 4", "velo2");
+    verifierSiColisionEssai("Level 5", "foot1");
+    verifierSiColisionEssai("Level 5", "foot2");
 }
-
-function moveVelo1() {
-    let velo1 = document.getElementById("velo1");
-    const velo1Style = window.getComputedStyle(velo1, null);
-    let positionColumnVelo1 = velo1Style.getPropertyValue("grid-column-start");
-    // let positionRowVelo1 = velo1Style.getPropertyValue("grid-row-start");
-    velo1.style.gridColumnStart = Number(positionColumnVelo1) - 1;
-}
-function moveViking1(){
-    let viking1 = document.getElementById("viking1");
-    const viking1Style = window.getComputedStyle(viking1, null);
-    // let positionColumnVelo1 = viking1Style.getPropertyValue("grid-column-start");
-    let positionRowViking1 = viking1Style.getPropertyValue("grid-row-start");
-    viking1.style.gridRowStart = Number(positionRowViking1) -1;
-}
-
-// RELOU DE DECLARER LES VAR ET TOUT REFAIRE POUR CHAQUE ENEMIES
-function verifierSiColision() {
-    console.log("verification de colision");
-    // encore declarer ces variables ... 
-    let player = document.getElementById("player");
-    const playerStyle = window.getComputedStyle(player, null);
-    let positionColumn = playerStyle.getPropertyValue("grid-column-start");
-    let positionRow = playerStyle.getPropertyValue("grid-row-start");
-    // puis velo1
-    let velo1 = document.getElementById("velo1");
-    const velo1Style = window.getComputedStyle(velo1, null);
-    let positionColumnVelo1 = velo1Style.getPropertyValue("grid-column-start");
-    let positionRowVelo1 = velo1Style.getPropertyValue("grid-row-start");
-    if (positionColumn == positionColumnVelo1 && positionRow == positionRowVelo1) {
-        playerDestruction();
-        console.log("destruction par le velo");
-    }
-    // puis viking1
-    let viking1 = document.getElementById("viking1");
-    const viking1Style = window.getComputedStyle(viking1, null);
-    let positionColumnViking1 = viking1Style.getPropertyValue("grid-column-start");
-    let positionRowViking1 = viking1Style.getPropertyValue("grid-row-start");
-    if (positionColumn == positionColumnViking1 && positionRow == positionRowViking1) {
-        playerDestruction();
-        console.log("destruction par le viking");
-    }
-}
-
-// modele de function pour tous les enemies....
-// function enemieMoves222(nom, haut, droite, bas, gauche) {
-//     let enemieDiv = document.createElement("div");
-//     enemieDiv.setAttribute("id", nom);
-//     enemieDiv.setAttribute("class", "enemies");
-//     container.append(enemieDiv);
-//     let enemie = document.getElementById(nom);
-//     const enemieStyle = window.getComputedStyle(enemie, null);
-//     let positionColumnEnemie = enemieStyle.getPropertyValue("grid-column-start");
-//     let positionRowEnemie = enemieStyle.getPropertyValue("grid-row-start");
-//     enemie.style.gridColumnStart = Number(positionRowEnemie) - haut;
-//     enemie.style.gridColumnStart = Number(positionColumnEnemie) + droite;
-//     enemie.style.gridColumnStart = Number(positionRowEnemie) + bas;
-//     enemie.style.gridColumnStart = Number(positionColumnEnemie) - gauche;
-// }
-
-// NE FONCTIONNE PAS 
-
-function enemieMoves(nom, haut, droite, bas, gauche){
-    console.log(nom);
-    console.log("")
-    let enemie = document.getElementById(nom);
-    const enemieStyle = window.getComputedStyle(enemie, null);
-    let positionColumnEnemie = enemieStyle.getPropertyValue("grid-column-start");
-    let positionRowEnemie = enemieStyle.getPropertyValue("grid-row-start");
-    enemie.style.gridColumnStart = Number(positionRowEnemie) - haut;
-    enemie.style.gridColumnStart = Number(positionColumnEnemie) + droite;
-    enemie.style.gridColumnStart = Number(positionRowEnemie) + bas;
-    enemie.style.gridColumnStart = Number(positionColumnEnemie) - gauche;
-    console.log(enemie);
-    console.log("positionRowEnemie: ",positionRowEnemie);
-    console.log("positionColumnEnemie: ",positionColumnEnemie);
-    console.log("positionRowEnemie mais number: ",Number(positionRowEnemie));
-    console.log("positionRowEnemie mais number: ",Number(positionColumnEnemie));
-
-}
-// enemieMoves("viking1", 1, 0, 0 ,0);

@@ -10,11 +10,32 @@
     grid-column-start: 4;
     grid-row-start: 3;
 }
-#velo2{
-    background-image: url("../images/icons8-hockey-helmet-50.png");
-}
 #viking1{
     background-image: url("../images/icons8-casque-viking-64.png");
     grid-column-start: 1;
     grid-row-start: 7;
+}
+#velo2{
+    background-image: url("../images/icons8-hockey-helmet-50.png");
+    grid-column-start: 4;
+    grid-row-start: 7;
+}
+#foot1{
+    background-image: url("../images/foot1.png");
+    grid-column-start: 4;
+    grid-row-start: 7;
+}
+#foot2{
+    background-image: url("../images/foot2.png");
+    grid-column-start: 1;
+    grid-row-start: 7;
+}
+#foot3{
+    background-image: url("../images/foot3.png");
+}
+#foot4{
+    background-image: url("../images/foot4.png");
+}
+#foot5{
+    background-image: url("../images/foot5.png");
 }
