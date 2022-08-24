@@ -15,7 +15,7 @@ function playerLevelUp(){
         bulle("+1 vie")
     }
     else if(playerSize == "contain"){
-        player.style.backgroundSize = "cover";
+        player.classList.add("borderLife");
         bulle("+1 vie")
     } 
     else {
@@ -24,14 +24,15 @@ function playerLevelUp(){
 }
 function playerDestruction(){
     const playerStyle = window.getComputedStyle(player, null);
-    let playerSize = playerStyle.getPropertyValue("background-size");
-    if(playerSize == "cover"){
+    let playerSize = playerStyle.getPropertyValue("background-size");   
+    if(playerSize == "contain" && player.classList == "borderLife"){
         player.style.backgroundSize = "contain";
-        bulle("Meh")
+        player.classList.remove("borderLife");
+        bulle("Meh");
     }
     else if(playerSize == "contain"){
         player.style.backgroundSize = "auto";
-        bulle("last chance")
+        bulle("last chance");
     } 
     else {
         bulle("ouch");

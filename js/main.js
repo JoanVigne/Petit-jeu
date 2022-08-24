@@ -53,6 +53,7 @@ function startGame(){
     document.title = "First Level";
     container.classList.replace("menu", "grid");
     playerCreation();
+    creerLesButtonsInvisible();
 }
 
 

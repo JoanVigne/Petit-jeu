@@ -32,9 +32,13 @@
 }
 #foot3{
     background-image: url("../images/foot3.png");
+    grid-column-start: 4;
+    grid-row-start: 2;
 }
 #foot4{
     background-image: url("../images/foot4.png");
+    grid-column-start: 1;
+    grid-row-start: 3;
 }
 #foot5{
     background-image: url("../images/foot5.png");

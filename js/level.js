@@ -30,9 +30,13 @@ function touchDowm(){
         document.title = "Level 6";
         hidden("foot1");
         hidden("foot2");
+        enemiesCreation("foot3");
+        enemiesCreation("foot4");
         break;
         case "Level 6" : 
         document.title = "Level 7";
+        hidden("foot3");
+        hidden("foot4");
         break;
         case "Level 7" : 
         document.title = "Level 8";

@@ -1,26 +1,27 @@
 
 
 
-
-
-#player{
+#player {
     background-image: url("../images/chevalierCute.png");
     background-repeat: no-repeat;
-    background-size:auto;
+    background-size: auto;
     background-position: center;
     width: 100%;
     grid-column: 1;
     grid-row: 1;
-
 }
+
+.borderLife {
+    border: 5px yellow solid;
+}
+
 body {
-    background-image: url("../images/Terrain_football_américain412914.png");
     background-repeat: no-repeat;
-    background-size: cover;
     height: 100%;
     padding: 0;
     margin: 0;
 }
+
 .menu {
     background-color: black;
     display: flex;
@@ -28,6 +29,7 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
 html {
     width: 100%;
     height: 100%;
@@ -37,7 +39,6 @@ html {
     /* background-color: aquamarine; */
     width: 100%;
     height: 100%;
-
 }
 
 input {
@@ -52,15 +53,34 @@ input {
 /* LE GRID */
 
 .grid {
-    display: grid ;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
 }
-/* .touchDown{
-    grid-column-start: 1;
-    grid-column-end: span col4-start;
-    grid-row-start: 7;
-    grid-row-end: span 2;
-} */
 
+
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+    body {
+        background-image: url("../images/Terrain_football_américain412914.png");
+        background-size: cover;
+        background-position: bottom;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* tablettes et ordinateurs */
+    #player {
+        height: 100%;
+        background-position: center;
+    }
+
+    body {
+        background-image: url("../images/terrainLarge.png");
+        background-size: cover;
+        background-color: green;
+        background-position: center;
+    }
+}
