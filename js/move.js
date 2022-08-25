@@ -46,6 +46,9 @@ function checkKey(e) {
          // player move
         moveRight("player", 1);
     }
+    verifierSiColisionAll();
+}
+function verifierSiColisionAll(){
     verifierSiColision("Level 2", "velo1");
     verifierSiColision("Level 3", "viking1");
     verifierSiColision("Level 4", "velo2");
