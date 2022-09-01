@@ -7,9 +7,10 @@ function enemiesCreation(x) {
     container.append(enemie);
 }
 // pour cacher les enemies des niveaux precedents
-function hidden(y) {
+function none(y) {
     let element = document.getElementById(y);
-    element.style.visibility = "hidden";
+    // element.style.display = "none";
+    element.remove();
 }
 
 // verifier les colisions

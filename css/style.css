@@ -41,13 +41,18 @@ html {
     height: 100%;
 }
 
-input {
+.inputMenu {
     text-align: center;
     margin: 10px;
     padding: 9px;
     border-radius: 10px;
     font-size: x-large;
     background-color: white;
+}
+
+input:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
 }
 
 /* LE GRID */
@@ -61,11 +66,11 @@ input {
 /* PERSONAL RECORDS */
 .personalRecord {
     background-color: rgba(245, 250, 249, 0.9);
+    text-align: center;
+    padding: 10px;
+    border: blue 3px solid;
+}
 
-}
-ul {
-    list-style: none;
-}
 #buttonBack {
     border: red 1px solid;
 }

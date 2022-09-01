@@ -9,32 +9,31 @@
     font-weight: bold;
 }
 
-#topButton {
+.buttonDirection{
     position: absolute;
+    opacity: 0.1;
+}
+.buttonDirection:hover {
+    background-color: red;
+}
+#topButton {
     width: 100%;
     height: 23%;
-    opacity: 0.3;
 }
 #rightButton {
-    position: absolute;
     width: 30%;
     height: 50%;
-    opacity: 0.3;
     right: 0;
-    top: 22%;
+    top: 23%;
 }
 #botButton {
-    position: absolute;
     width: 100%;
     height: 27%;
-    opacity: 0.3;
     bottom: 0;
 }
 #leftButton {
-    position: absolute;
     width: 30%;
     height: 50%;
-    opacity: 0.3;
     left: 0;
-    top: 22%;
+    top: 23%;
 }

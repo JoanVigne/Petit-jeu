@@ -7,51 +7,66 @@ function touchDowm(){
         case "index" : console.log("Menu principal");
         break;
         case "First Level" : 
-        document.title = "Level 2";
+        document.title = 2;
         enemiesCreation("velo1");
         break;
-        case "Level 2" : 
-        document.title = "Level 3";
-        hidden("velo1");
+        case "2": 
+        document.title = 3;
+        none("velo1");
         enemiesCreation("viking1");
         break;
-        case "Level 3" : 
-        document.title = "Level 4";
-        hidden("viking1");
+        case "3" : 
+        document.title = 4;
+        none("viking1");
         enemiesCreation("velo2");
         break;
-        case "Level 4" : 
-        document.title = "Level 5";
-        hidden("velo2");
+        case "4" : 
+        document.title = 5;
+        none("velo2");
         enemiesCreation("foot1");
         enemiesCreation("foot2");
         break;
-        case "Level 5" : 
-        document.title = "Level 6";
-        hidden("foot1");
-        hidden("foot2");
+        case "5" : 
+        document.title = 6;
+        none("foot1");
+        none("foot2");
         enemiesCreation("foot3");
         enemiesCreation("foot4");
         break;
-        case "Level 6" : 
-        document.title = "Level 7";
-        hidden("foot3");
-        hidden("foot4");
+        case "6" : 
+        document.title = 7;
+        none("foot3");
+        none("foot4");
+        enemiesCreation("foot3");
+        enemiesCreation("foot4");
+        enemiesCreation("foot5");
         break;
-        case "Level 7" : 
-        document.title = "Level 8";
+        case "7" : 
+        document.title = "8";
+        none("foot3");
+        none("foot4");
+        none("foot5");
+        enemiesCreation("foot1");
+        enemiesCreation("foot2");
+        enemiesCreation("foot3");
+        enemiesCreation("foot4");
         break;
-        case "Level 8" : 
+        case "8": 
+        document.title = "9";
+        none("foot1");
+        none("foot2");
+        none("foot3");
+        none("foot4");
         break;
-        case "Level 9" : 
+        case "9" : 
         break;
-        case "Level 10" : 
+        case "10" : 
         break;
-        case "Level 11" : 
+        case "11" : 
         break;
-        case "Level 12" : 
+        case "12" : 
         break;
-        case "Level 13" : 
+        case "13" : 
         break;
     }
 }

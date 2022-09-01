@@ -33,13 +33,15 @@
 #foot3{
     background-image: url("../images/foot3.png");
     grid-column-start: 4;
-    grid-row-start: 2;
+    grid-row-start: 3;
 }
 #foot4{
     background-image: url("../images/foot4.png");
     grid-column-start: 1;
-    grid-row-start: 3;
+    grid-row-start: 4;
 }
 #foot5{
     background-image: url("../images/foot5.png");
+    grid-column-start: 2;
+    grid-row-start: 7;
 }

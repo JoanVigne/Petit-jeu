@@ -37,22 +37,19 @@ function playerDestruction() {
     else {
         bulle("ouch");
         setTimeout(function () {
+            var retrievedObject = localStorage.getItem("record");
+            var stored = JSON.parse(retrievedObject);
             let name = prompt("Quel est votre nom ou pseudo?");
             let niveau = document.title;
-            let record = [{
+            let newEntry = {
                 "nom": name,
                 "level": niveau
-            }];
-            let stored = JSON.parse(localStorage.getItem("record"));
-            if (stored != null) {
-                stored.push(record);
-                localStorage.setItem("record", JSON.stringify(stored));
-                console.log("normalement ça a fait stored.push");
-            }
-            else {
-                localStorage.setItem("record", JSON.stringify(record));
-                console.log("le else si stored == null");
-            }
+            };
+            stored.push(newEntry);
+
+            localStorage.setItem("record", JSON.stringify(stored));
+            console.log("normalement ça a rajouter dans le tableau");
+
         }, 400);
 
         // la mort

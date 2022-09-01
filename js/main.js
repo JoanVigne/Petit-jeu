@@ -3,7 +3,9 @@
 let container = document.getElementById("container");
 
 // PAGES 
-window.onload = buttonsMenu(), buttonsMenuEvent();
+window.onload = buttonsMenu(), buttonsMenuEvent(), setLocalStorage();
+
+
 
 // LA FUNCTION POUR CREER DES BUTTONS
 function buttons(id, value) {
@@ -11,6 +13,7 @@ function buttons(id, value) {
     button.setAttribute("type", "button");
     button.setAttribute("id", id);
     button.setAttribute("value", value);
+    button.setAttribute("class", "inputMenu")
     container.append(button);
 }
 
@@ -59,6 +62,25 @@ function startGame() {
 // OPTIONS
 
 // PERSONAL RECORD
+// POUR METTRE LE TABLEAU DANS LE LOCAL STORAGE
+
+function setLocalStorage() {
+    let stored = localStorage.getItem("record");
+    if (stored == null) {
+        console.log("stored null");
+        let record = [];
+        let newbe = {
+            "nom": "Newbe",
+            "level": "5"
+        }
+        record.push(newbe);
+        localStorage.setItem("record", JSON.stringify(record));
+    }
+    else {
+        console.log("le storage record est la")
+    }
+}
+
 function affichageRecords() {
     let buttonStart = document.getElementById("start");
     let buttonOptions = document.getElementById("options");
@@ -71,23 +93,27 @@ function affichageRecords() {
     let retrievedObject = localStorage.getItem("record");
     let recordPerso = JSON.parse(retrievedObject);
     let affichage = document.createElement("div");
-    affichage.classList.add("personalRecord");
-    let alphabet = recordPerso.forEach(element => {
-    //    console.log(element); 
-       console.log(element["nom"])
-    });
-    
-    console.log(alphabet);
-    // console.log(recordPerso);
 
-    affichage.innerHTML = `<h1>Your personal Records :</h1> <br>
-                            <ul> <li><h1>${recordPerso[0]["nom"]} : ${recordPerso[0]["level"]}</h1> </li>
-                                    </ul>`;
+    recordPerso.sort(function(a, b){return a.level - b.level});
+    recordPerso.reverse();
+    
+    affichage.innerHTML = `<h1>Personal records</h1>`;
+    if (recordPerso != null) {
+        recordPerso.forEach(element => {
+            affichage.innerHTML += `<p> ${element["nom"]} =>
+                                    ${element["level"]}</p>`
+        });
+    }
+
+
+    affichage.classList.add("personalRecord");
     container.append(affichage);
 
     let buttonBack = document.createElement("input");
     buttonBack.setAttribute("id", "buttonBack");
     buttonBack.setAttribute("value", "Menu");
+    buttonBack.setAttribute("type", "button");
+    buttonBack.setAttribute("class", "inputMenu")
     buttonBack.addEventListener("click", menuPrincipal);
     container.append(buttonBack);
 }
@@ -98,20 +124,3 @@ function menuPrincipal() {
 // creation du player  dans  ======> player.js
 // FAIRE BOUGER LE PLAYER dans  ===> move.js
 // FAIRE BOUGER LES ENEMIES DANS ==> enemies.js
-
-
-// let player = [{
-//     "nom": choixNom.value,
-//     "race": choixRace.value,
-//     "image": `<img src='../images/perso/` + choixRace.value + `.png' alt'' id='imgPerso' title='Voir plus de stats'>`
-//   }];
-//   localStorage.setItem("player", JSON.stringify(player));
-
-
-
-// let retrievedObject = localStorage.getItem("player");
-// let player = JSON.parse(retrievedObject);
-
-// let nom = player[0]["nom"];
-// let race = player[0]["race"];
-// let img = player[0]["image"];
