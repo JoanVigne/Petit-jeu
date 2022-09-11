@@ -4,6 +4,13 @@
 function playerCreation() {
     let player = document.createElement("div");
     player.setAttribute("id", "player");
+    let playerStyle = localStorage.getItem("playerStyle");
+    if(playerStyle !== null) {
+        player.setAttribute("class", playerStyle);
+    }
+    else {
+        player.setAttribute("class", "chevalier");
+    }
     container.append(player);
 }
 
@@ -36,33 +43,10 @@ function playerDestruction() {
     }
     else {
         bulle("ouch");
-        setTimeout(function () {
-            var retrievedObject = localStorage.getItem("record");
-            var stored = JSON.parse(retrievedObject);
-            let name = prompt("Quel est votre nom ou pseudo?");
-            let niveau = document.title;
-            let newEntry = {
-                "nom": name,
-                "level": niveau
-            };
-            stored.push(newEntry);
-
-            localStorage.setItem("record", JSON.stringify(stored));
-            console.log("normalement ça a rajouter dans le tableau");
-
-        }, 400);
-
-        // la mort
-        setTimeout(function () { alert("You OUT"); }, 500);
-        setTimeout(function () { location.reload(); }, 600);
-
+        promptMaison();
     }
 }
 
-// enregistrer record 
-function addARecord() {
-    let
-}
 // BULLES MESSAGES
 function bulle(message) {
     let bulle = document.createElement("p");

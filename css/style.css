@@ -1,27 +1,16 @@
-
-
-
-#player {
-    background-image: url("../images/chevalierCute.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
+* {
+    font-family: cursive;
+}
+html {
     width: 100%;
-    grid-column: 1;
-    grid-row: 1;
+    height: 100%;
 }
-
-.borderLife {
-    border: 5px yellow solid;
-}
-
 body {
     background-repeat: no-repeat;
     height: 100%;
     padding: 0;
     margin: 0;
 }
-
 .menu {
     background-color: black;
     display: flex;
@@ -30,17 +19,11 @@ body {
     flex-direction: column;
 }
 
-html {
-    width: 100%;
-    height: 100%;
-}
 
 #container {
-    /* background-color: aquamarine; */
     width: 100%;
     height: 100%;
 }
-
 .inputMenu {
     text-align: center;
     margin: 10px;
@@ -49,12 +32,16 @@ html {
     font-size: x-large;
     background-color: white;
 }
-
 input:hover {
     background-color: antiquewhite;
     cursor: pointer;
 }
 
+.containerDesPersos { 
+    width: 100%;
+    height: 100%;
+    display: flex; 
+}
 /* LE GRID */
 .grid {
     display: grid;
@@ -62,6 +49,7 @@ input:hover {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
 }
+
 
 /* PERSONAL RECORDS */
 .personalRecord {
@@ -75,12 +63,74 @@ input:hover {
     border: red 1px solid;
 }
 
+/* LE PROMPT FAIT MAISON */
+#boxPrompt {
+    background-color: whitesmoke;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    top: 27%;
+    border-radius: 70px;
+    padding: 0 20px 50px 20px;
+}
+
+#boxPrompt input {
+    text-align: center;
+    width: 75%;
+    height: 35px;
+    padding: 2px;
+    margin: 5px;
+}
+
+::placeholder {
+    color: rgb(208, 205, 205);
+}
+
+#boxPrompt input[type=button] {
+    border: yellowgreen 3px solid;
+    height: 60px;
+}
+
+/* GAME OVER */
+#containerPopup {
+    background-image: url("../images/american-football-ball.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60%;
+    height: 55%;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#containerPopup h1 {
+    font-size: xxx-large;
+    color: darkcyan;
+}
 
 @media only screen and (min-width: 300px) and (max-width: 768px) {
     body {
         background-image: url("../images/Terrain_football_américain412914.png");
         background-size: cover;
         background-position: bottom;
+    }
+
+    #containerPopup {
+        background-image: url("../images/american-football-ball-vertical.png");
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        background-size: contain;
+    }
+
+    .personalRecord {
+        font-size: x-large;
+    }
+
+    input {
+        font-size: xx-large;
     }
 }
 

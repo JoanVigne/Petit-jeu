@@ -26,7 +26,6 @@ function verifierSiColision(level, nom) {
         let positionRowX = xStyle.getPropertyValue("grid-row-start");
         if (positionColumn == positionColumnX && positionRow == positionRowX) {
             playerDestruction();
-            console.log("destruction");
         }
     }
 }

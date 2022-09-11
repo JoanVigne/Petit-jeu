@@ -46,9 +46,26 @@ function checkKey(e) {
                 moveLeft("foot3", 1);
                 moveRight("foot4", 1);
             }
+            if (document.title == 9){
+                moveUp("foot1", 1);
+                moveLeft("foot1", 1);
+                moveUp("foot2", 1);
+                moveRight("foot2", 1);
+                moveLeft("foot3", 1);
+                moveRight("foot4", 1);
+                moveUp("foot5", 1);
+            }
+            if(document.title == 10){
+                moveLeft("velo1", 1);
+                moveLeft("velo2", 1);
+                moveLeft("velo3", 1);
+                moveUp("viking1", 1);
+                moveUp("viking2", 1);
+                moveUp("viking3", 1);
+            }
             // ESSAI LEVEL 1 
             if (document.title == "First Level") {
-                console.log("premier level pour faire des essaies");
+                // ESSAIS
             }
     }
     else if (e.keyCode == '37') {
@@ -63,41 +80,40 @@ function checkKey(e) {
 }
 function verifierSiColisionAll(){
     verifierSiColision(2, "velo1");
+
     verifierSiColision(3, "viking1");
+
     verifierSiColision(4, "velo2");
+
     verifierSiColision(5, "foot1");
     verifierSiColision(5, "foot2");
+
     verifierSiColision(6, "foot3");
     verifierSiColision(6, "foot4");
+
     verifierSiColision(7, "foot3");
     verifierSiColision(7, "foot4");
     verifierSiColision(7, "foot5");
+
     verifierSiColision(8, "foot1");
     verifierSiColision(8, "foot2");
     verifierSiColision(8, "foot3");
     verifierSiColision(8, "foot4");
 
+    verifierSiColision(9, "foot1");
+    verifierSiColision(9, "foot2");
+    verifierSiColision(9, "foot3");
+    verifierSiColision(9, "foot4");
+    verifierSiColision(9, "foot4");
 
+    verifierSiColision(10, "velo1");
+    verifierSiColision(10, "velo2");
+    verifierSiColision(10, "viking1");
+    verifierSiColision(10, "viking2");
+    verifierSiColision(10, "viking3");
+    
 }
 
-// au click top bot left right
-// function InvisibleButtons(id, onclick) {
-//     let button = document.createElement("input");
-//     button.setAttribute("type", "button");
-//     button.setAttribute("id", id);
-//     button.setAttribute("onclick", onclick)
-//     container.append(button);
-// }
-// function creerLesButtonsInvisible() {
-//     InvisibleButtons("topButton", `checkKey('38')`);
-//     InvisibleButtons("rightButton", `checkKey('39')`);
-//     InvisibleButtons("botButton", `checkKey('40')`);
-//     InvisibleButtons("leftButton", `checkKey('37')`);
-// }
-// let topButton = document.getElementById("topButton");
-// let rightButton = document.getElementById("rightButton");
-// let botButton = document.getElementById("botButton");
-// let leftButton = document.getElementById("leftButton");
 
 // HAUT DROITE BAS GAUCHE
 function moveUp(name, up) {

@@ -64,9 +64,26 @@ function toBot() {
         moveLeft("foot3", 1);
         moveRight("foot4", 1);
     }
+    if (document.title == 9){
+        moveUp("foot1", 1);
+        moveLeft("foot1", 1);
+        moveUp("foot2", 1);
+        moveRight("foot2", 1);
+        moveLeft("foot3", 1);
+        moveRight("foot4", 1);
+        moveUp("foot5", 1);
+    }
+    if(document.title == 10){
+        moveLeft("velo1", 1);
+        moveLeft("velo2", 1);
+        moveLeft("velo3", 1);
+        moveUp("viking1", 1);
+        moveUp("viking2", 1);
+        moveUp("viking3", 1);
+    }
     // ESSAI LEVEL 1 
     if (document.title == "First Level") {
-        console.log("premier level pour faire des essaies");
+
     }
     verifierSiColisionAll();
 }
